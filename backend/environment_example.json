@@ -1,0 +1,20 @@
+{
+    "LilyMortyURL" : "https://rickandmortyapi.com/", 
+    "redis" : {
+        "host" : "172.18.43.177", 
+        "port" : "6379", 
+        "dbSession" : "session", 
+        "dbUser" : "user",
+        "secret"  : "MANTEQUILLA_NO_JUTSU"
+
+    },
+    "limitSession" : "1200" , 
+    "JWT" : {
+        "secretKey": "MANTEQUILLA",
+        "detail" : {
+            "algorithm": "HS256",
+            "expiresIn": "2m"
+        }    
+    }
+
+}
