@@ -4,17 +4,19 @@ services:
     redis:
         image: redis:6.0-rc
         expose:
-        - '6379:6379'
+        - 6379
     backend:
         build: backend
         command: npm start
         depends_on:
                 - redis
         environment:
-            - REDIS_HOST=redis://redis
+            - REDIS_HOST=redis
             - REDIS_PORT=6379
             - REDIS_SECRET="MANTECA"
             - PORT=3000
+        ports:
+            - '8888:3000'
     frontend: 
         build: frontend 
         ports:
