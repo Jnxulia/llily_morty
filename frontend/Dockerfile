@@ -10,6 +10,7 @@ RUN npm install &&\
     rm -rf /home/frontend/node_modules
 FROM nginx
 RUN rm -rf /usr/share/nginx/html/*
+COPY virtualhost/frontend.conf /etc/nginx/conf.d/default.conf
 COPY --from=builder /home/frontend/build /usr/share/nginx/html
 EXPOSE  80
 CMD ["nginx", "-g", "daemon off;"]
